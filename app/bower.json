@@ -1,0 +1,21 @@
+{
+  "name": "electron-boilerplate",
+  "description": "Starter for your Electron application. Out of the box ready for serious stuff.",
+  "main": "background.js",
+  "authors": [
+    "Mr Gumby"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/szwacz/electron-boilerplate",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}

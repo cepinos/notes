@@ -1,34 +1,39 @@
+import Notes from './notes';
 import Note from './note';
 
-describe('note', function() {
+
+describe('notes', function() {
   beforeEach(function(){
-    this.note = new Note('buy an unicorn');
-  });
-  it('Should create a note', function() {
-    expect(this.note).toEqual(jasmine.any(Note));
-  });
-
-  it('Should set the created at, id and  field', function() {
-    expect(this.note.createdAt).toEqual(jasmine.any(Date));
-    expect(this.note.updatedAt).toEqual(jasmine.any(Date));
-    expect(this.note.id).toEqual(jasmine.any(Number));
-    expect(this.note.text).toEqual(jasmine.any(String));
+    this.notes = new Notes();
+  })
+  it('Should create notes', function() {
+    expect(this.notes).toEqual(jasmine.any(Notes));
+    expect(this.notes.count()).toBe(0);
   });
 
-  it('Should read note text', function() {
-    expect(this.note.text).toBe('buy an unicorn');
+  it('Should add note and delete', function() {
+    var note = new Note();
+    this.notes.add(note);
+    expect(this.notes.count()).toBe(1);
+
+    this.notes.delete(note.id);
+    console.log(this.notes);
+    expect(this.notes.count()).toBe(0);
   });
 
-  it('Should edit note', function() {
-    this.note.text = 'testing edit';
-    expect(this.note.text).toBe('testing edit');
+  it('Should not raise error if there is no notes', function() {
+    expect(function(){
+      this.notes.delete(0)
+    }.bind(this)).not.toThrow();
   });
 
-  it('Should save and get notes', function() {
-    var obj = Note.save(this.note);
-    var obj2 = Note.get(obj.id);
-    expect(obj2.id).toEqual(obj.id);
-    expect(obj2.text).toEqual(obj.text);
+  xit('Should get notes', function() {
+
+  });
+
+  xit('Should sort', function() {
+
   });
 
 });
+
