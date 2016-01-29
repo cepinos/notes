@@ -9,31 +9,44 @@ import { notes } from './notes/notes'; // code authored by you in this project
 import env from './env';
 import Notes from './notes/notes';
 import Note from './notes/note';
+import Vue from 'vue';
 
-console.log('Loaded environment variables:', env);
+Vue.config.debug = true;
 
-var app = remote.app;
-var appDir = jetpack.cwd(app.getAppPath());
+var notes = new Notes();
 
-// Holy crap! This is browser window with HTML and stuff, but I can read
-// here files like it is node.js! Welcome to Electron world :)
-console.log('The author of this app is:', appDir.read('package.json', 'json').author);
+new Vue({
+  el: '#app',
+  data: notes,
+  methods: {
+    addTodo: function () {
+      var note = new Note('buy un unicorn');
+      notes.add(note);
+    },
+    removeTodo: function (index, id) {
+      notes.delete(id);
+    },
+    edit: function(id){
+      this.currentNote = this[id];
+    }
+
+  }
+});
 
 /*
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('greet').innerHTML = greet();
-    document.getElementById('platform-info').innerHTML = os.platform();
-    document.getElementById('env-name').innerHTML = env.name;
-});
-*/
-
 $(document).on('ready',function(){
   var notes = new Notes();
 
   var render = function(){
     $('#notesList').html('');
     Object.keys(notes.list).forEach(function(key){
-      $('#notesList').append('<li>').append(notes.list[key].text);
+      var li = $('#notesList').append('<li id="'+notes.list[key].id+'">' + notes.list[key].text + '<button id="'+notes.list[key].id+'" class="delete">x</button>' + '</li>');
+    });
+
+    $('.delete').on('click', function(e){
+      var id = $(this).attr('id');
+      notes.delete(id);
+      $(this).parent().remove();
     });
   }
   render();
@@ -42,5 +55,8 @@ $(document).on('ready',function(){
     var note = new Note('buy un unicorn');
     notes.add(note);
     render();
-  })
+  });
+
 });
+
+*/

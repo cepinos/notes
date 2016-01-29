@@ -1,5 +1,5 @@
 function idGenerator(){
-  return new Date().getTime();
+  return 'note_' + new Date().getTime();
 }
 
 function Note(text){

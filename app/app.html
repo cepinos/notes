@@ -10,19 +10,26 @@
 
     <script src="vendor/electron_boilerplate/context_menu.js"></script>
     <script src="vendor/electron_boilerplate/external_links.js"></script>
+
 </head>
 <body>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <input id="search" type="text" class="form-control">
-                <ul id="notesList">
-                </ul>
-            </div>
-            <div class="col-md-8">
-                <button id="add" class="btn">Add note</button>
-                <textarea id="textInput" class="form-control">Text</textarea>
+    <div id="app">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <input id="search" type="text" class="form-control">
+                      <ul>
+                        <li v-for="note in list">
+                          <span v-on:click="edit(note.id)">{{ note.text }}</span>
+                          <button v-on:click="removeTodo($index, note.id)">X</button>
+                        </li>
+                      </ul>
+                </div>
+                <div class="col-md-8">
+                    <button v-on:click="addTodo">Add todo</button>
+                    <textarea v-model="currentNote.text">{{ currentNote.text }}</textarea>
+                </div>
             </div>
         </div>
     </div>
@@ -31,5 +38,6 @@
         window.$ = window.jQuery = require('./bower_components/jquery/dist/jquery.min.js');
     </script>
     <script src="app.js"></script>
+
 </body>
 </html>

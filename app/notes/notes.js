@@ -1,10 +1,13 @@
+import Note from './note';
+
 function Notes(){
-  this.list = {};
+  this.list = [];
+  this.currentNote = new Note('test');
   this.load();
 }
 
 Notes.prototype.add = function(note){
-    this.list[note.id] = note;
+    this.list.unshift(note);
     this.save();
   }
 
@@ -15,7 +18,13 @@ Notes.prototype.save = function(){
 
 Notes.prototype.delete = function(id){
   if (this.count() === 0) return;
-  delete this.list[id];
+  this.list.forEach(function(note){
+    if (note.id === id){
+      console.log(this.list);
+      this.list.$remove(note);
+    };
+  }.bind(this));
+  this.save();
 }
 
 Notes.prototype.load = function(){
