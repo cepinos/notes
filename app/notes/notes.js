@@ -1,5 +1,6 @@
 function Notes(){
   this.list = {};
+  this.load();
 }
 
 Notes.prototype.add = function(note){
@@ -19,7 +20,7 @@ Notes.prototype.delete = function(id){
 
 Notes.prototype.load = function(){
   const string = localStorage.getItem('Notes');
-  this.list = JSON.parse(string);
+  this.list = JSON.parse(string) || {};
 }
 
 Notes.prototype.count = function(){

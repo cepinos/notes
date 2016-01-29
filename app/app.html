@@ -5,20 +5,31 @@
     <title>Electron Boilerplate</title>
 
     <link href="./stylesheets/main.css" rel="stylesheet" type="text/css">
+    <link href="./bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="./bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
 
     <script src="vendor/electron_boilerplate/context_menu.js"></script>
     <script src="vendor/electron_boilerplate/external_links.js"></script>
-
-    <script src="app.js"></script>
 </head>
 <body>
 
     <div class="container">
         <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-8"></div>
+            <div class="col-md-4">
+                <input id="search" type="text" class="form-control">
+                <ul id="notesList">
+                </ul>
+            </div>
+            <div class="col-md-8">
+                <button id="add" class="btn">Add note</button>
+                <textarea id="textInput" class="form-control">Text</textarea>
+            </div>
         </div>
     </div>
 
+    <script type="text/javascript">
+        window.$ = window.jQuery = require('./bower_components/jquery/dist/jquery.min.js');
+    </script>
+    <script src="app.js"></script>
 </body>
 </html>

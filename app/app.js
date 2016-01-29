@@ -5,8 +5,10 @@
 import os from 'os'; // native node.js module
 import { remote } from 'electron'; // native electron module
 import jetpack from 'fs-jetpack'; // module loaded from npm
-import { greet } from './hello_world/hello_world'; // code authored by you in this project
+import { notes } from './notes/notes'; // code authored by you in this project
 import env from './env';
+import Notes from './notes/notes';
+import Note from './notes/note';
 
 console.log('Loaded environment variables:', env);
 
@@ -17,8 +19,28 @@ var appDir = jetpack.cwd(app.getAppPath());
 // here files like it is node.js! Welcome to Electron world :)
 console.log('The author of this app is:', appDir.read('package.json', 'json').author);
 
+/*
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('greet').innerHTML = greet();
     document.getElementById('platform-info').innerHTML = os.platform();
     document.getElementById('env-name').innerHTML = env.name;
+});
+*/
+
+$(document).on('ready',function(){
+  var notes = new Notes();
+
+  var render = function(){
+    $('#notesList').html('');
+    Object.keys(notes.list).forEach(function(key){
+      $('#notesList').append('<li>').append(notes.list[key].text);
+    });
+  }
+  render();
+
+  $('#add').on('click',function(e){
+    var note = new Note('buy un unicorn');
+    notes.add(note);
+    render();
+  })
 });
