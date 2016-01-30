@@ -17,15 +17,15 @@ Notes.prototype.save = function(){
 }
 
 Notes.prototype.delete = function(id){
-  var note;
+  var noteIndex;
 
   if (this.count() === 0) return;
 
-  note = this.list.find(function(note){
+  noteIndex = this.list.findIndex(function(note){
     return note.id === id;
   });
 
-  if(note) this.list.$remove(note);
+  if(noteIndex !== -1) this.list.splice(noteIndex, 1);
 
   this.save();
 }

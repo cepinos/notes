@@ -7,6 +7,13 @@ import Notes from './notes/notes';
 import Note from './notes/note';
 
 Vue.config.debug = true;
+/**
+ * Filter for ellipsis
+ */
+
+Vue.filter('ellipsis', function(value){
+  return value.length > 20 ? value.slice(0,20) + '...' : value;
+});
 
 var notes = new Notes();
 
@@ -15,7 +22,8 @@ new Vue({
   el: '#app',
   data: {
     list: notes.list,
-    currentNote: notes.currentNote
+    currentNote: notes.currentNote,
+    search: ''
   },
   methods: {
     add: function () {

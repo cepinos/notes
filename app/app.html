@@ -18,11 +18,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <input id="search" type="text" class="form-control">
+                    <input id="search" v-model="search" type="text" class="form-control">
                       <ul>
-                        <li v-for="note in list">
+                        <li v-for="note in list | filterBy search in 'text'">
                           <button v-on:click="remove(note.id)">X</button>
-                          <span v-on:click="edit($index)">{{ note.text }}</span>
+                          <span v-on:click="edit($index)">{{ note.text | ellipsis }}</span>
                         </li>
                       </ul>
                 </div>
@@ -33,10 +33,6 @@
             </div>
         </div>
     </div>
-
-    <script type="text/javascript">
-        window.$ = window.jQuery = require('./bower_components/jquery/dist/jquery.min.js');
-    </script>
     <script src="app.js"></script>
 
 </body>
