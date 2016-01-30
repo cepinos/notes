@@ -21,14 +21,14 @@
                     <input id="search" type="text" class="form-control">
                       <ul>
                         <li v-for="note in list">
-                          <span v-on:click="edit(note.id)">{{ note.text }}</span>
-                          <button v-on:click="removeTodo($index, note.id)">X</button>
+                          <button v-on:click="remove(note.id)">X</button>
+                          <span v-on:click="edit($index)">{{ note.text }}</span>
                         </li>
                       </ul>
                 </div>
                 <div class="col-md-8">
-                    <button v-on:click="addTodo">Add todo</button>
-                    <textarea v-model="currentNote.text">{{ currentNote.text }}</textarea>
+                    <button v-on:click="add">Add todo</button>
+                    <textarea v-model="currentNote.text" v-on:keyup="save" class="form-control" rows="20">{{ currentNote.text }}</textarea>
                 </div>
             </div>
         </div>
