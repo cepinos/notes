@@ -27,7 +27,7 @@
                       </ul>
                 </div>
                 <div class="col-md-8">
-                    <button v-on:click="add">Add todo</button>
+                    <button v-on:click="add" class="btn">Add note</button>
                     <textarea v-model="currentNote.text" v-on:keyup="save" class="form-control" rows="20">{{ currentNote.text }}</textarea>
                 </div>
             </div>
