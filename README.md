@@ -18,8 +18,8 @@ By the way, there is a twin project to this one: [nw-boilerplate](https://github
 The only development dependency of this project is [Node.js](https://nodejs.org). So just make sure you have it installed.
 Then type few commands known to every Node developer...
 ```
-git clone https://github.com/szwacz/electron-boilerplate.git
-cd electron-boilerplate
+git clone https://github.com/cepinos/notes.git
+cd notes
 npm install
 npm start
 ```
@@ -30,7 +30,7 @@ npm start
 There are **two** `package.json` files:  
 
 #### 1. For development
-Sits on path: `electron-boilerplate/package.json`. Here you declare dependencies for your development environment and build scripts. **This file is not distributed with real application!**
+Sits on path: `notes/package.json`. Here you declare dependencies for your development environment and build scripts. **This file is not distributed with real application!**
 
 Also here you declare the version of Electron runtime you want to use:
 ```json
@@ -40,7 +40,7 @@ Also here you declare the version of Electron runtime you want to use:
 ```
 
 #### 2. For your application
-Sits on path: `electron-boilerplate/app/package.json`. This is **real** manifest of your application. Declare your app dependencies here.
+Sits on path: `notes/app/package.json`. This is **real** manifest of your application. Declare your app dependencies here.
 
 #### OMG, but seriously why there are two `package.json`?
 1. Native npm modules (those written in C, not JavaScript) need to be compiled, and here we have two different compilation targets for them. Those used in application need to be compiled against electron runtime, and all `devDependencies` need to be compiled against your locally installed node.js. Thanks to having two files this is trivial.
