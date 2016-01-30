@@ -6,18 +6,21 @@ import Vue from 'vue';
 import Notes from './notes/notes';
 import Note from './notes/note';
 
+// Debug mode
 Vue.config.debug = true;
+
 /**
  * Filter for ellipsis
  */
-
 Vue.filter('ellipsis', function(value){
   return value.length > 20 ? value.slice(0,20) + '...' : value;
 });
 
+
+/**
+ * Render notes using Vue
+ */
 var notes = new Notes();
-
-
 new Vue({
   el: '#app',
   data: {

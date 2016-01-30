@@ -19,10 +19,10 @@
             <div class="row">
                 <div class="col-md-4">
                     <input id="search" v-model="search" type="text" class="form-control">
-                      <ul>
-                        <li v-for="note in list | filterBy search in 'text'">
-                          <button v-on:click="remove(note.id)">X</button>
+                      <ul class="notes">
+                        <li v-for="note in list | filterBy search in 'text'" class="notes__note">
                           <span v-on:click="edit($index)">{{ note.text | ellipsis }}</span>
+                          <span v-on:click="remove(note.id)" class="pull-right close">x</span>
                         </li>
                       </ul>
                 </div>
