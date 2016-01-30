@@ -17,19 +17,24 @@ var notes = new Notes();
 
 new Vue({
   el: '#app',
-  data: notes,
+  data: {
+    list: notes.list,
+    currentNote: notes.currentNote
+  },
   methods: {
     addTodo: function () {
       var note = new Note('buy un unicorn');
       notes.add(note);
+      this.$set(note.id, note);
     },
     removeTodo: function (index, id) {
+      this.$delete(id);
       notes.delete(id);
     },
     edit: function(id){
-      this.currentNote = this[id];
+      debugger;
+      this.$set('currentNote', this.$get(id));
     }
-
   }
 });
 
