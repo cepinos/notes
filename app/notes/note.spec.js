@@ -8,10 +8,10 @@ describe('note', function() {
     expect(this.note).toEqual(jasmine.any(Note));
   });
 
-  it('Should set the created at, id and  field', function() {
+  it('Should set the created at, id and updated at  fields', function() {
     expect(this.note.createdAt).toEqual(jasmine.any(Date));
     expect(this.note.updatedAt).toEqual(jasmine.any(Date));
-    expect(this.note.id).toEqual(jasmine.any(Number));
+    expect(this.note.id).toEqual(jasmine.any(String));
     expect(this.note.text).toEqual(jasmine.any(String));
   });
 

@@ -1,8 +1,23 @@
-.notes__note{
+.notes__note {
   list-style: none;
   height: 1.5em;
+  line-height: 1.5em;
+  padding: 1px 2px;
+  position: relative;
 }
-
-.close{
+.notes__note__text {
+  display: block;
+}
+.notes__note__close {
+  position: absolute;
+  right: 0.2em;
+  top: 0;
+}
+.notes__note:hover{
+  outline: orange solid 1px;
+  border-radius: 1px;
+}
+.close {
   cursor: pointer;
+  line-height: 1.5em;
 }

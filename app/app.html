@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Electron Boilerplate</title>
+    <title>Notes</title>
 
     <link href="./stylesheets/main.css" rel="stylesheet" type="text/css">
     <link href="./bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -21,8 +21,8 @@
                     <input id="search" v-model="search" type="text" class="form-control">
                       <ul class="notes">
                         <li v-for="note in list | filterBy search in 'text'" class="notes__note">
-                          <span v-on:click="edit($index)">{{ note.text | ellipsis }}</span>
-                          <span v-on:click="remove(note.id)" class="pull-right close">x</span>
+                          <span v-on:click="edit($index)" class="notes__note__text">{{ note.text | ellipsis }}</span>
+                          <span v-on:click="remove(note.id)" class="notes__note__close close">x</span>
                         </li>
                       </ul>
                 </div>
