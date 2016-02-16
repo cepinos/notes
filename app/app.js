@@ -38,6 +38,7 @@ new Vue({
     remove: function (id) {
       notes.delete(id);
       this.currentNote = null;
+      if( notes.count() > 0 ) this.edit(0);
     },
     edit: function(index){
       this.currentNote = this.list[index];
