@@ -33,6 +33,7 @@ new Vue({
       var note = new Note();
       notes.add(note);
       this.edit(0);
+      this.search = '';
     },
     remove: function (id) {
       notes.delete(id);
