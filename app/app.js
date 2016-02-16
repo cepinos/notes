@@ -35,6 +35,7 @@ new Vue({
     },
     remove: function (id) {
       notes.delete(id);
+      this.currentNote = null;
     },
     edit: function(index){
       this.currentNote = this.list[index];

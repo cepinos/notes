@@ -2,7 +2,7 @@ import Note from './note';
 
 function Notes(){
   this.list = [];
-  this.currentNote = {};
+  this.currentNote;
   this.load();
 }
 
@@ -25,7 +25,9 @@ Notes.prototype.delete = function(id){
     return note.id === id;
   });
 
-  if(noteIndex !== -1) this.list.splice(noteIndex, 1);
+  if(noteIndex !== -1){
+    this.list.splice(noteIndex, 1);
+  }
 
   this.save();
 }

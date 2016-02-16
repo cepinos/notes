@@ -6,7 +6,6 @@
 
     <link href="./stylesheets/main.css" rel="stylesheet" type="text/css">
     <link href="./bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="./bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
 
     <script src="vendor/electron_boilerplate/context_menu.js"></script>
     <script src="vendor/electron_boilerplate/external_links.js"></script>
@@ -15,20 +14,31 @@
 <body>
 
     <div id="app">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-4">
-                    <input id="search" v-model="search" type="text" class="form-control">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                        <input id="search" v-model="search" type="text" class="form-control" placeholder="Filter">
+                    </div>
                       <ul class="notes">
                         <li v-for="note in list | filterBy search in 'text'" class="notes__note">
                           <span v-on:click="edit($index)" class="notes__note__text">{{ note.text | ellipsis }}</span>
-                          <span v-on:click="remove(note.id)" class="notes__note__close close">x</span>
                         </li>
                       </ul>
                 </div>
                 <div class="col-md-8">
-                    <button v-on:click="add" class="btn">Add note</button>
-                    <textarea v-model="currentNote.text" v-on:keyup="save" class="form-control" rows="20">{{ currentNote.text }}</textarea>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <button v-on:click="add" class="btn btn-default">New note</button>
+                            <span v-if="currentNote">
+                                <button v-on:click="remove(currentNote.id)" class="btn btn-default">Remove</button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="note" v-if="currentNote">
+                        <textarea v-model="currentNote.text" v-on:keyup="save" class="note__edit" placeholder="Insert note...">{{ currentNote.text }}</textarea>
+                    </div>
                 </div>
             </div>
         </div>
