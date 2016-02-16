@@ -32,6 +32,7 @@ new Vue({
     add: function () {
       var note = new Note();
       notes.add(note);
+      this.edit(0);
     },
     remove: function (id) {
       notes.delete(id);
@@ -42,6 +43,10 @@ new Vue({
     },
     save: function(index){
       notes.save();
+    },
+    current: function(id){
+      if(!this.currentNote) return '';
+      return this.currentNote.id === id ? 'notes__note--selected' : '';
     }
   }
 });

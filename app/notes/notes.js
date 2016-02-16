@@ -38,7 +38,7 @@ Notes.prototype.load = function(){
 }
 
 Notes.prototype.count = function(){
-  return Object.keys(this.list).length;
+  return this.list.length;
 }
 
 export default Notes;
