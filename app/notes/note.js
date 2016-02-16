@@ -4,7 +4,7 @@ function idGenerator(){
 
 function Note(text){
   this.id = idGenerator();
-  this.text = text || 'insert note';
+  this.text = text || '';
   this.createdAt = new Date();
   this.updatedAt = this.createdAt;
 }
