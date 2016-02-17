@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import Note from './note';
 
 function Notes(){
@@ -21,11 +22,11 @@ Notes.prototype.delete = function(id){
 
   if (this.count() === 0) return;
 
-  noteIndex = this.list.filter(function(note){
+  noteIndex = _.findIndex(this.list, function(note){
     return note.id === id;
   });
 
-  if(noteIndex.length){
+  if(noteIndex !== -1){
     this.list.splice(noteIndex, 1);
   }
 

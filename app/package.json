@@ -3,12 +3,13 @@
   "productName": "Notes",
   "identifier": "com.cepinos.notes",
   "description": "Notes out of the box ready for serious stuff.",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "author":"Cesar Pino <cesarpino547@gmail.com>",
   "copyright": "© 2016, cepinos",
   "main": "background.js",
   "dependencies": {
     "fs-jetpack": "^0.7.0",
-    "vue": "^1.0.15"
+    "vue": "^1.0.15",
+    "lodash": "^4.4.0"
   }
 }
