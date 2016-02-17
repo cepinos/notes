@@ -2,7 +2,7 @@ import Note from './note';
 
 function Notes(){
   this.list = [];
-  this.currentNote;
+  this.currentNote = {};
   this.load();
 }
 

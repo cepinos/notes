@@ -38,14 +38,14 @@
                     <div class="row actions">
                         <div class="col-xs-12">
                             <button v-on:click="add" class="btn btn-default">New note</button>
-                            <span v-if="currentNote">
+                            <span v-if="currentNote.id">
                                 <button v-on:click="remove(currentNote.id)" class="btn btn-default">Remove</button>
                                 <span class="pull-right hidden-xs">Created at {{currentNote.createdAt}}</span>
                             </span>
                         </div>
                     </div>
-                    <div class="note" v-if="currentNote">
-                        <textarea v-model="currentNote.text" v-on:keyup="save" class="note__edit" placeholder="Insert note...">{{ currentNote.text }}</textarea>
+                    <div class="note" v-show="currentNote.id">
+                        <textarea v-model="currentNote.text" v-on:keyup="save" class="note__edit" placeholder="Insert note..." v-el:edit-note>{{ currentNote.text }}</textarea>
                     </div>
                 </div>
             </div>

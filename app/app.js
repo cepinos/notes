@@ -32,23 +32,32 @@ new Vue({
     add: function () {
       var note = new Note();
       notes.add(note);
-      this.edit(0);
+
       this.search = '';
+      this.edit(0);
     },
     remove: function (id) {
       notes.delete(id);
-      this.currentNote = null;
-      if( notes.count() > 0 ) this.edit(0);
+
+      this.currentNote = {};
+      this.edit(0);
     },
     edit: function(index){
+      if( notes.count() <= 0 ) return;
+
       this.currentNote = this.list[index];
+      this.$els.editNote.focus();
     },
     save: function(index){
       notes.save();
     },
     current: function(id){
       if(!this.currentNote) return '';
+
       return this.currentNote.id === id ? 'notes__note--selected' : '';
     }
+  },
+  ready: function() {
+    this.edit(0);
   }
 });
