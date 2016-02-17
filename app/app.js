@@ -46,7 +46,11 @@ new Vue({
       if( notes.count() <= 0 ) return;
 
       this.currentNote = this.list[index];
-      this.$els.editNote.focus();
+
+      // Focus text area
+      Vue.nextTick(function(){
+        this.$els.editNote.focus();
+      }.bind(this));
     },
     save: function(index){
       notes.save();
