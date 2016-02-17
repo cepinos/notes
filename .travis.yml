@@ -2,6 +2,7 @@ language: node_js
 node_js: stable
 
 install:
+    - npm install -g gulp
     - npm install
 
 before_script:
@@ -10,7 +11,16 @@ before_script:
 
 script:
     - npm test
+    - gulp release --env=production
 
 cache:
     directories:
     - node_modules
+
+deploy:
+  provider: releases
+  api_key: $GITHUB_OAUTH_TOKEN
+  file: "releases/notes_amd64.deb"
+  skip_cleanup: true
+  on:
+    tags: true

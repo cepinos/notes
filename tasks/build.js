@@ -143,11 +143,12 @@ gulp.task('watch', function () {
  * Run test once and exit
  */
 gulp.task('test', ['copy'], function (done) {
-  if(utils.getEnvName() !== 'test') return;
   new Server({
     configFile: __dirname + '/../karma.conf.js',
     singleRun: true
   }, done).start();
 });
 
-gulp.task('build', ['bundle', 'less', 'copy', 'finalize', 'test']);
+var buildDependencies = ['bundle', 'less', 'copy', 'finalize'];
+if(utils.getEnvName() === 'test') buildDependencies.push('test');
+gulp.task('build', buildDependencies);

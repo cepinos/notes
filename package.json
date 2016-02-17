@@ -27,9 +27,5 @@
     "release": "gulp release --env=production",
     "start": "node ./tasks/start",
     "test": "node ./tasks/start --env=test"
-  },
-  "dependencies": {
-    "jquery": "^2.2.0",
-    "vue": "^1.0.15"
   }
 }
