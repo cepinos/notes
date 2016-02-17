@@ -143,6 +143,7 @@ gulp.task('watch', function () {
  * Run test once and exit
  */
 gulp.task('test', ['copy'], function (done) {
+  if(utils.getEnvName() !== 'test') return;
   new Server({
     configFile: __dirname + '/../karma.conf.js',
     singleRun: true
