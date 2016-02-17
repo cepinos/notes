@@ -62,6 +62,7 @@ var runApp = function () {
 
 runBuild()
 .then(function () {
+    if(utils.getEnvName() === 'test') return;
     runGulpWatch();
     runApp();
 });

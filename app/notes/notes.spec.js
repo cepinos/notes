@@ -17,7 +17,7 @@ describe('notes', function() {
     expect(this.notes.count()).toBe(1);
 
     this.notes.delete(note.id);
-    console.log(this.notes);
+
     expect(this.notes.count()).toBe(0);
   });
 

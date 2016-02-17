@@ -12,7 +12,7 @@ Notes.prototype.add = function(note){
   }
 
 Notes.prototype.save = function(){
-  const string = JSON.stringify(this.list);
+  var string = JSON.stringify(this.list);
   localStorage.setItem('Notes', string);
 }
 
@@ -21,11 +21,11 @@ Notes.prototype.delete = function(id){
 
   if (this.count() === 0) return;
 
-  noteIndex = this.list.findIndex(function(note){
+  noteIndex = this.list.filter(function(note){
     return note.id === id;
   });
 
-  if(noteIndex !== -1){
+  if(noteIndex.length){
     this.list.splice(noteIndex, 1);
   }
 
@@ -33,7 +33,7 @@ Notes.prototype.delete = function(id){
 }
 
 Notes.prototype.load = function(){
-  const string = localStorage.getItem('Notes');
+  var string = localStorage.getItem('Notes');
   this.list = JSON.parse(string) || [];
 }
 

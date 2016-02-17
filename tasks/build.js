@@ -7,6 +7,8 @@ var rollup = require('rollup');
 var less = require('gulp-less');
 var jetpack = require('fs-jetpack');
 
+var Server = require('karma').Server;
+
 var utils = require('./utils');
 var generateSpecsImportFile = require('./generate_specs_import');
 
@@ -137,5 +139,14 @@ gulp.task('watch', function () {
     gulp.watch('app/**/*.less', ['less-watch']);
 });
 
+/**
+ * Run test once and exit
+ */
+gulp.task('test', ['copy'], function (done) {
+  new Server({
+    configFile: __dirname + '/../karma.conf.js',
+    singleRun: true
+  }, done).start();
+});
 
-gulp.task('build', ['bundle', 'less', 'copy', 'finalize']);
+gulp.task('build', ['bundle', 'less', 'copy', 'finalize', 'test']);
