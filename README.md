@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/cepinos/notes.svg?branch=master)](https://travis-ci.org/cepinos/notes)
 electron-boilerplate
 ==============
 Comprehensive boilerplate application for [Electron runtime](http://electron.atom.io).  
