@@ -11,7 +11,7 @@ before_script:
 
 script:
     - npm test
-    - gulp release --env=production
+    - if [[ "$TRAVIS_TAG" ]]; then gulp release --env=production; fi
 
 cache:
     directories:
