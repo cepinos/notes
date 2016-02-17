@@ -3,7 +3,7 @@
   "productName": "Notes",
   "identifier": "com.cepinos.notes",
   "description": "Notes out of the box ready for serious stuff.",
-  "version": "1.4.2",
+  "version": "1.5.2",
   "author":"Cesar Pino <cesarpino547@gmail.com>",
   "copyright": "© 2016, cepinos",
   "main": "background.js",
