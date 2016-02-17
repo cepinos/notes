@@ -60,9 +60,10 @@ var runApp = function () {
     });
 };
 
-runBuild()
-.then(function () {
-    if(utils.getEnvName() === 'test') return;
-    runGulpWatch();
-    runApp();
-});
+var build = runBuild();
+if(utils.getEnvName() !== 'test'){
+    build.then(function () {
+        runGulpWatch();
+        runApp();
+    });
+}
