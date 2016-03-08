@@ -8,7 +8,7 @@ Scope of this project:
 
 - Support Linux, OSX, and Windows.
 - Give you cross-platform development environment, which works the same way on OSX, Windows and Linux.
-- Generate ready for distribution installers of your app for all three operating systems.
+- Ready for distribution installers of your app for all three operating systems.
 
 NOT in the scope:
 
