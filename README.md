@@ -6,7 +6,7 @@ Cross platform notes application
 
 Scope of this project:
 
-- Provide basic structure of the application so you can much easier grasp what should go where.
+- Support Linux, OSX, and Windows.
 - Give you cross-platform development environment, which works the same way on OSX, Windows and Linux.
 - Generate ready for distribution installers of your app for all three operating systems.
 
