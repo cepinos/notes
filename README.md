@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/cepinos/notes.svg?branch=master)](https://travis-ci.org/cepinos/notes)
-Notes
+Notes Desktop Application
 ==============
 
 Cross platform notes application
