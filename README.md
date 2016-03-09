@@ -9,6 +9,7 @@ Scope of this project:
 - Support Linux, OSX, and Windows.
 - Ready for distribution installers of your app for all three operating systems.
 
+
 # Quick start
 
 The only development dependency of this project is [Node.js](https://nodejs.org). So just make sure you have it installed.
