@@ -19,7 +19,9 @@ cd notes
 npm install
 npm start
 ```
+
 ... and boom! You have running desktop application on your screen.
+
 
 # Structure of the project
 
