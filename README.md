@@ -7,7 +7,6 @@ Cross platform notes application
 Scope of this project:
 
 - Support Linux, OSX, and Windows.
-- Give you cross-platform development environment, which works the same way on OSX, Windows and Linux.
 - Ready for distribution installers of your app for all three operating systems.
 
 # Quick start
@@ -23,7 +22,7 @@ npm start
 
 # Structure of the project
 
-There are **two** `package.json` files:  
+There are **two** `package.json` files:
 
 #### 1. For development
 Sits on path: `notes/package.json`. Here you declare dependencies for your development environment and build scripts. **This file is not distributed with real application!**
