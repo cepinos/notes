@@ -8,13 +8,7 @@ Scope of this project:
 
 - Support Linux, OSX, and Windows.
 - Give you cross-platform development environment, which works the same way on OSX, Windows and Linux.
-- Generate ready for distribution installers of your app for all three operating systems.
-
-NOT in the scope:
-
-- Imposing on you any framework (e.g. Angular, React). You can integrate the one which makes most sense for you.
-
-By the way, there is a twin project to this one: [nw-boilerplate](https://github.com/szwacz/nw-boilerplate), which is the same thing but for NW.js.
+- Ready for distribution installers of your app for all three operating systems.
 
 # Quick start
 The only development dependency of this project is [Node.js](https://nodejs.org). So just make sure you have it installed.
