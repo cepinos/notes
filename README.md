@@ -28,6 +28,7 @@ npm start
 
 There are **two** `package.json` files:
 
+
 #### 1. For development
 
 Sits on path: `notes/package.json`. Here you declare dependencies for your development environment and build scripts. **This file is not distributed with real application!**
