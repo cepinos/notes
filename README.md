@@ -41,6 +41,7 @@ Also here you declare the version of Electron runtime you want to use:
 ```
 
 #### 2. For your application
+
 Sits on path: `notes/app/package.json`. This is **real** manifest of your application. Declare your app dependencies here.
 
 #### OMG, but seriously why there are two `package.json`?
