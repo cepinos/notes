@@ -29,6 +29,7 @@ npm start
 There are **two** `package.json` files:
 
 #### 1. For development
+
 Sits on path: `notes/package.json`. Here you declare dependencies for your development environment and build scripts. **This file is not distributed with real application!**
 
 Also here you declare the version of Electron runtime you want to use:
