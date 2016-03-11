@@ -157,6 +157,7 @@ The installer is built using [NSIS](http://nsis.sourceforge.net). You have to in
 
 There are still a lot of 32-bit Windows installations in use. If you want to support those systems and have 64-bit OS make sure you've installed 32-bit (instead of 64-bit) Node version. There are [versions managers](https://github.com/coreybutler/nvm-windows) if you feel the need for both architectures on the same machine.
 
+
 # License
 
 The MIT License (MIT)
