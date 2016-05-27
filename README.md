@@ -3,6 +3,7 @@ Notes Desktop Application with Electron
 ==============
 
 
+
 Cross platform notes application
 
 Scope of this project:
